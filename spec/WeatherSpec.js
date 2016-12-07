@@ -10,8 +10,8 @@ describe("Weather", function(){
   });
 
   it("returns a number between 0 and 1", function(){
-    expect(weather.randomize()).not.toBeLessThan(0);
-    expect(weather.randomize()).not.toBeMoreThan(1);
+    expect(weather.randomize()).toBeGreaterThan(0);
+    expect(weather.randomize()).not.toBeGreaterThan(1);
   });
 
 
