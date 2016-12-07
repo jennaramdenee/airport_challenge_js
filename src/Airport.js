@@ -3,11 +3,9 @@ function Airport(capacity=20) {
   this.capacity = capacity;
 }
 
-
-
 Airport.prototype.landPlane = function(plane){
   if(this.isFull()) {
-    return "something really nasty";
+    throw "something really nasty";
   }
   else {
     this.planes.push(plane);

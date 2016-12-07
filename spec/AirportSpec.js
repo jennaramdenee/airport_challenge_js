@@ -1,7 +1,13 @@
 describe("Airport creation", function(){
 
+  var airport;
+  var aiport2;
+  var plane;
+  var plane2;
+
   beforeEach(function(){
     airport = new Airport();
+    airport1 = new Airport(1);
     airport2 = new Airport(15);
     plane = new Plane();
     plane2 = new Plane();
@@ -36,8 +42,10 @@ describe("Airport creation", function(){
     });
 
     it("can't land a plane if there is no capacity", function(){
-      airport.landPlane(plane);
-      expect(airport.landPlane(plane2)).toEqual("something really nasty");
+      airport1.landPlane(plane);
+      expect(function(){
+        airport1.landPlane(plane2)
+      }).toThrowError("something really nasty");
     });
 
     it("can tell if a plane has landed", function(){
@@ -52,7 +60,7 @@ describe("Airport creation", function(){
     it("can instruct a plane to take off", function(){
       airport.landPlane(plane);
       airport.takeOffPlane(plane);
-      expect(airport.planes).not.toEqual( jasmine.arrayContaining([plane]) );
+      expect(airport.planes).not.toEqual(jasmine.arrayContaining([plane]) );
     });
 
     it("can tell if a plane has taken off", function(){
