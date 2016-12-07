@@ -27,3 +27,7 @@ Airport.prototype.isFull = function(){
     return false;
   };
 }
+
+Airport.prototype.hasPlaneLanded = function(plane){
+  return !plane.flying;
+}
