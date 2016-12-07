@@ -45,7 +45,7 @@ describe("Airport creation", function(){
       airport1.landPlane(plane);
       expect(function(){
         airport1.landPlane(plane2)
-      }).toThrowError("something really nasty");
+      }).toThrowError(error);
     });
 
     it("can tell if a plane has landed", function(){
