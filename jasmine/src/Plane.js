@@ -1,5 +1,13 @@
-var Plane = function(){};
+var Plane = function(){this.flying = false;};
+
+Plane.prototype.isFlying = function(){
+  return this.flying;
+};
 
 Plane.prototype.takenOff = function(){
-  return true;
+  this.flying = true;
+};
+
+Plane.prototype.landed = function(){
+  this.flying = false;
 };
